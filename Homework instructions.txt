@@ -1,0 +1,3 @@
+Naredi preprost kalkulator, kjer uporabnik preko input polj doloèi dve števili ter operacijo, ki jo želi izvesti (seštevanje, odštevanje itd.). V backendu se v POST metodi operacija izvede in prikaže uporabniku rezultat.
+
+POZOR: vrednosti, ki jih dobimo preko self.request.get() so v string obliki. Èe želimo integer ali float, je treba vrednost ustrezno pretvoriti.
