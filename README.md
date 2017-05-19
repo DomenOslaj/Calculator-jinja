@@ -1,6 +1,6 @@
 # About
 
-Basic GAE project with Jinja templating engine
+Simple calculator (jinja, python, html)
 
 # Usage
 
