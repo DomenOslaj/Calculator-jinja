@@ -31,6 +31,31 @@ class MainHandler(BaseHandler):
     def get(self):
         return self.render_template("hello.html")
 
+class CalculatorHandler(BaseHandler):
+    def post(self):
+        first_number = float(self.request.get("number1"))
+        second_number = float(self.request.get("number2"))
+        operation = self.request.get("operation")
+
+        if operation == "+":
+            result = first_number + second_number
+
+        if operation == "-":
+            result = first_number - second_number
+
+        if operation == "/":
+            result = first_number / second_number
+
+        if operation == "*":
+            result = first_number * second_number
+
+        params = {"result": result}
+
+        return self.render_template("calculator.html", params=params)
+
+        #you can use "return self.write("Result is %s" % result)" too. Without params and calculator.html
+
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
+    webapp2.Route("/calculator", CalculatorHandler),
 ], debug=True)
